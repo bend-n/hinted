@@ -1,0 +1,9 @@
+[package]
+name = "hinted"
+version = "0.0.0"
+edition = "2021"
+authors = ["bend-n <bend.n@outlook.com>"]
+license = "MIT"
+repository = "https://github.com/bend-n/hinted"
+exclude = [".gitignore"]
+description = "small crate for providing a size hint on an iterator"
