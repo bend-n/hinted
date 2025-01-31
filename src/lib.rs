@@ -110,7 +110,7 @@ where
     type Item = <I as Iterator>::Item;
 
     fn next(&mut self) -> Option<Self::Item> {
-        self.len = unsafe { self.len.unchecked_sub(1) };
+        self.len = self.len.saturating_sub(1);
         self.iter.next()
     }
 
@@ -126,7 +126,7 @@ impl<I: Iterator> ExactSizeIterator for Exactly<I> {
 }
 impl<I: DoubleEndedIterator> DoubleEndedIterator for Exactly<I> {
     fn next_back(&mut self) -> Option<Self::Item> {
-        self.len = unsafe { self.len.unchecked_sub(1) };
+        self.len = self.len.saturating_sub(1);
         self.iter.next_back()
     }
 }
