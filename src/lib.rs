@@ -6,7 +6,7 @@
         min_specialization,
         trusted_random_access,
         inplace_iteration,
-        doc_auto_cfg
+        doc_cfg,
     )
 )]
 #![no_std]
@@ -34,7 +34,7 @@ where
         Hinted { iter: self, hint }
     }
     /// Implements [`ExactSizeIterator`] for any iterator, with a len provided by you.
-    /// This implements [`TrustedLen`](std::iter::TrustedLen) as well, so this function is unsafe.
+    /// This implements [`TrustedLen`](core::iter::TrustedLen) as well, so this function is unsafe.
     ///
     /// The resulting iterator will not return after the length has been reached.
     ///
